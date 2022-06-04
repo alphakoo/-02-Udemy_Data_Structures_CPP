@@ -1,0 +1,54 @@
+
+struct Card{
+
+	int face;					// numbers: 1~11, J, Q, K 
+	int shape;				// types: 1~4(space, diamond, heart, clover)
+	int color;				// color: 1~2(black, red)
+
+};
+
+typedef struct Student{
+
+	char name[20];
+	int num;
+	char id[10];
+
+}Student;
+
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+
+	Student st1;
+
+	strcpy(st1.name, "kim");
+	
+	st1.num = 10;
+
+	strcpy(st1.id, "I45-23");
+
+	printf("st1.name: %s\n", st1.name);
+	printf("st1.num: %d\n", st1.num);
+	printf("st1.id: %s\n", st1.id);
+
+// ------------------------------------
+
+	struct Card card1;
+
+	struct Card card2 = {10,2,1};
+
+	// array of structure
+	struct Card card_set[52];
+
+	// 4bytes * 3 integer * 52 cards = 624
+	printf("size of card_set: %d\n", sizeof(card_set));
+
+	// 4bytes * 3 = 12bytes
+	printf("size of one card: %d\n", sizeof(card_set[0]));
+
+	// -------------------------------------------
+	 struct Card card_set2[52] = {{1,0,0},{2,1,0},{2,1,1},{10,3,1},{}};
+	
+}
