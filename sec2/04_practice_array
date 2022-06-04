@@ -1,0 +1,62 @@
+#include <iostream>
+// #include <cstdio>
+#include <stdio.h>
+
+using namespace std;
+
+int main() {
+	
+  int arry1[5];
+
+	arry1[0] = 12;
+	arry1[1] = 15;
+
+	// integer 4 bytes * 5 elments = 20 bytes
+	cout << sizeof(arry1) << endl;
+
+	cout << arry1[0] << endl;
+
+	printf("%d\n", arry1[1]);
+
+// ------------------------------------
+	
+	int arry2[5] = {2,4,6,8,10};
+	int arry3[] = {1,3,5,7,9,11,13};
+
+	cout << "sizeof(arry3): " << sizeof(arry3) << endl;
+
+// ------------------------------------
+	
+	int arry4[10] = {12,56,78,94,35,67};
+
+	cout << "arry4[9]: " << arry4[9] << endl;
+	printf("arry4[5]: %d\n", arry4[5]);
+
+// ------------------------------------
+	int arry5[7] = {0};
+// ------------------------------------
+	int arry6[10] = {8,7,5,9,4,1};
+
+	for(int i=0; i<10; i++){
+		printf("arry6[%d] >> %d\n", i, arry6[i]);
+	}
+
+	for(int x:arry6){
+		cout << x << endl;
+	}
+// ------------------------------------
+	int num;
+
+	cout << "Input Size >>";
+	cin >> num;
+
+	int arry7[num];
+
+	arry7[0] = 38;
+
+	for(int x:arry7){
+		cout << x << endl;
+	}
+	
+	return 0;
+}
