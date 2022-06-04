@@ -1,0 +1,49 @@
+struct Rectangle{
+	int length;
+	int width;
+};
+
+typedef struct Triangle {
+
+	int length;
+	double height;
+} Tri;
+
+#include <iostream>
+
+int main() {
+
+	struct Rectangle r1;
+
+	struct Rectangle r2 = {2,3};
+
+	r2.length = 20;
+	r2.width = 30;
+
+	printf("length of r2: %d\n", r2.length);
+	printf("width of r2: %d\n", r2.width);
+
+	// ----------------------------------------
+
+	Tri t1;
+
+	Tri t2 = {10,14.4};
+
+	Tri t3[5] = {};
+
+	for(int i=0; i<sizeof(t3) / sizeof(t3[0]); i++){
+		
+		printf("Input %d Data!!\n", i);
+		
+		printf("%d of t3.length >>", i);
+		scanf("%d", &t3[i].length);
+		printf("%d of t3.height >>", i);
+		scanf("%lf", &t3[i].height);
+	};
+
+	for(int j=0; j<sizeof(t3) / sizeof(t3[0]); j++){
+		printf("(%d, %.2lf)\n", t3[j].length, t3[j].height);
+	}
+
+	return 0;
+}
