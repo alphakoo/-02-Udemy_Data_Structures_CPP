@@ -1,0 +1,101 @@
+#include <iostream>
+#include <stdio.h>
+// malloc 함수
+#include <stdlib.h>
+
+using namespace std;
+
+typedef struct Student{
+
+	int num;
+	char name[20];
+
+} Stu;
+
+
+int main() {
+
+	int a = 20;
+	int *p;
+
+	p = &a;
+
+	cout << "a: " << a << endl;
+
+	printf("value of a: %d\n", a);
+	printf("address of a: %p\n", &a);
+
+	printf("value of p: %d\n", *p);
+	printf("pointer of p: %p\n", p);
+
+	
+	// -------------------------
+
+	int arry[5] = {2,4,6,8,10};
+
+	int *arry_p;
+
+	// arry is pointer
+	arry_p = arry;
+
+	int *arry_p0 = &arry[0];
+
+	printf("value of arry_p: %d\n", *arry_p);
+
+	for(int j=0; j<5; j++){
+		printf("val of arry: %d\n", arry_p[j]);
+	}
+
+	for(int j=0; j<5; j++){
+		printf("val of arry: %d\n", arry_p[j]);
+	}
+
+	free(arry_p);
+	// --------------------------
+
+	int *bp;
+
+	bp = (int*)malloc(sizeof(int)*5);
+
+	printf("size of bp: %d\n", sizeof(bp));
+
+	free(bp);
+	
+
+	int *cp;
+
+	cp = new int[5];
+
+	printf("size of cp: %d\n", sizeof(cp));
+
+	free(cp);
+	// ---------------------------------------
+
+	int *pp;
+	pp = new int[5];
+
+	for(int k=0; k<5; k++){
+		cout << "Input >> ";
+		cin >> pp[k];
+	}
+
+	for(int i=0; i<5; i++){
+		printf("pp[%d] >> %d\n", i, pp[i]);
+	}
+
+	delete pp;
+	// --------------------------------
+
+	// pointer memory 8bytes
+	int *p1;
+	char *cp1;
+	double *fp1;
+
+	Stu *sp1;
+
+	printf("size of pointers: p1 >> %d\n", sizeof(p1));
+	printf("size of pointers: cp1 >> %d\n", sizeof(cp1));
+	printf("size of pointers: fp1 >> %d\n", sizeof(fp1));
+	printf("size of pointers: sp1 >> %d\n", sizeof(sp1));
+	
+}
