@@ -1,0 +1,36 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+typedef struct Rectangle{
+
+	int length;
+	double width;
+} Rectangle;
+
+int main() {
+
+	Rectangle r = {5, 3.14};
+
+	cout << "r.length:" << r.length << endl;
+	cout << "r.width:" << r.width << endl;
+// ------------------------------------------
+	Rectangle *rp = &r;
+
+	cout << "rp->length: " << rp->length << endl;
+	cout << "rp->widht: " << rp->width << endl;
+// ------------------------------------------
+
+	Rectangle *qp;
+
+	qp = (Rectangle*)malloc(sizeof(Rectangle));
+
+	qp->length = 100;
+	qp->width = 2.78;
+
+	cout << "qp->length: " << qp->length << endl; 
+	cout << "qp->width: " << qp->width << endl;
+	
+}
