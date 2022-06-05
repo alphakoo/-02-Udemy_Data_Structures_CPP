@@ -1,0 +1,34 @@
+#include <iostream>
+
+struct Rectangle{
+	int length;
+	int width;
+};
+
+using namespace std;
+
+int main() {
+
+	struct Rectangle r = {2, 3};
+
+	struct Rectangle *p = &r;
+
+	(*p).length = 100;
+
+	printf("length: %d\n", (*p).length);
+
+	p->length = 200;
+
+	printf("length: %d\n", p->length);
+	
+	// ------------------------------------
+
+	struct Rectangle *q;
+
+	q = (struct Rectangle*)malloc(sizeof(struct Rectangle));
+
+	q->length = 20;
+	q->width = 30;
+
+	printf("length: %d\n", q->length);
+}
