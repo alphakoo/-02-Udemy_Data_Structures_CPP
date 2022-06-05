@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main() {
+	
+  int a = 10;
+	// this is reference!
+	int &r = a;
+
+	// this is pointer
+	int *p;
+
+	int b = 20;
+
+	// 이건 값만 넣어준 것에 불과
+	r=b;
+
+	cout << r << endl;
+	cout << a << endl;
+	// ----------------------------------
+
+	printf("address of a: %p\n", &a);
+	printf("address of r: %p\n", &r);
+	printf("address of b: %p\n", &b);
+
+}
