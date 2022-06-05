@@ -1,0 +1,65 @@
+/*
+	Why should I use pointers?
+	- there are three parts in memory
+  - code section, stack, heap
+  - we can not access directly heap memory
+  - pointer can access directly heap memory
+
+  1) accecing heap
+	2) accessing resources
+  3) parameter passing
+
+	*/
+#include <iostream>
+// to use malloc function
+#include <stdlib.h>
+
+using namespace std;
+
+int main() {
+
+	int a = 10;				// data variable - 4bytes
+
+	// declaration 
+	int *p;						// address variable - 4bytes
+
+	// initialization
+	p = &a;						// store address + pointing
+
+	printf("a value: %d\n", a);
+
+	printf("p value: %d\n", p);
+
+	printf("a address: %d\n", &a);
+
+	printf("p address: %d\n", &p);
+
+	// dereferencing
+	printf("p pointing val: %d\n", *p);
+
+	// --------------
+
+	int *p1;
+	int *p2;
+
+	// using heap memory by malloc function
+	// malloc needs bytes size and
+	// type
+	p1 = (int*)malloc(5*sizeof(int));
+
+	p2 = new int[5];
+
+
+	printf("val of p1: %d\n", *p1);
+	cout << *p1 << endl;
+	printf("val of p2: %d\n", *p2);
+	cout << *p2 << endl;
+
+	printf("address of p1: %d\n", &p1);
+	cout << &p1 << endl;
+	printf("address of p2: %d\n", &p2);
+	cout << &p2 << endl;
+
+	free(p1);
+	free(p2);
+}
