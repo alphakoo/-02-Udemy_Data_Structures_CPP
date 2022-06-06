@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int add(int, int);
+
+int main() {
+
+	int x, y, z;
+
+	x=10;
+	y=5;
+
+	z = add(x, y);
+
+	printf("sum of x, y is %d\n", z);
+}
+
+int add(int x, int y){
+	int res;
+	res = x+y;
+	return res;
+}
