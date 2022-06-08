@@ -1,0 +1,54 @@
+#include <iostream>
+
+int add(int, int);
+
+void swap(int *, int *);
+
+void func(int &, int &);
+
+using namespace std;
+
+int main() {
+
+	int num1 = 10, num2 = 15, sum = 0;
+
+	sum = add(num1, num2);
+
+	cout << "sum is " << sum << endl;
+	
+// ---------------------------------
+	
+	int a = 100, b = 200;
+
+	printf("Before swap func: (%d, %d)\n", a, b);
+	
+	swap(&a, &b);
+
+	printf("After swap func: (%d, %d)\n", a, b);
+
+	func(a, b);
+
+	printf("After func: (%d, %d)\n", a, b);
+}
+
+int add(int x, int y){
+
+	return x + y;
+}
+
+void swap(int *x, int *y){
+	int tmp;
+
+	tmp = *x;
+	*x = *y;
+	*y = tmp;
+}
+
+void func(int &x, int &y){
+	int tmp;
+
+	tmp = x;
+	x = y;
+	y = tmp;
+	
+}
