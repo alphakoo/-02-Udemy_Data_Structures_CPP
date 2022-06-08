@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+void swap(int, int);
+
+void swap2(int *, int *);
+
+void swap3(int &, int &);
+
+int main() {
+
+	int a, b;
+
+	a=10; b=20;
+
+	swap(a, b);
+
+	printf("(a, b) >> (%d, %d)\n", a, b);
+
+	swap2(&a, &b);
+
+	printf("(a, b) >> (%d, %d)\n", a, b);
+
+	swap3(a, b);
+
+	printf("(a, b) >> (%d, %d)\n", a, b);
+}
+
+// call by value
+void swap(int x, int y){
+	int tmp;
+
+	tmp = x;
+	x=y;
+	y=tmp;
+}
+
+// call by pointer
+void swap2(int *x, int *y){
+
+	int tmp;
+
+	tmp = *x;
+	*x=*y;
+	*y = tmp;
+}
+
+// call by reference
+void swap3(int &x, int &y){
+	int tmp;
+
+	tmp = x;
+	x=y;
+	y=tmp;
+}
