@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+typedef struct Test{
+
+	int arry[5];
+	int n;
+
+} Test;
+
+void func(Test);
+
+int main() {
+
+	Test t1 = {{2,4,6,8,10},5};
+
+	func(t1);
+}
+
+// 배열을 call by value로 넘기는 방법은 배열과 사이즈를 하나의 구조체로 만들면 가능하다!
+void func(Test x){
+
+	x.arry[0]++;
+
+	x.n = 6;
+}
