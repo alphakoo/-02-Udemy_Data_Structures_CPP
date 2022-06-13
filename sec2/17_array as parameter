@@ -1,0 +1,60 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void func(int [], int);
+
+int *func2(int);
+
+void func3(int *, int);
+
+int main() {
+	
+	int arry[5] = {1,5,9,7,2};
+	
+	int arry_size = sizeof(arry)/sizeof(arry[0]); 
+	
+	func(arry, arry_size);
+
+	// -------------------------------------
+
+	int *p;
+
+	p = func2(5);
+
+	// --------------------------------------
+
+	func3(p, arry_size);
+
+	// --------------------------------------
+
+	func(p, arry_size);
+}
+
+void func(int arry[], int size){
+
+	for(int i=0; i<size; i++){
+
+		printf("%d\t",arry[i]);
+	}
+	printf("\n");
+}
+
+int *func2(int n){
+
+	int *tmp;
+
+	tmp = (int*)malloc(sizeof(int)*n);
+
+	return tmp;
+}
+
+void func3(int *arry, int size){
+
+	srand((unsigned int)time(NULL));
+	
+	for(int i=0; i<size; i++){
+		arry[i] = rand()%100+1;
+	}
+}
